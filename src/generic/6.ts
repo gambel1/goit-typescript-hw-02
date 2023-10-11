@@ -14,11 +14,16 @@ type User = {
   password: string;
 }
 
+const user = {
+  email: "electrifyx@gmail.com",
+  password: "testPassword123"
+}
+
 function createOrUpdateUser(initialValues: Partial<User>) {
   const updatedUser: User = {
-    ...initialValues,
-    email: initialValues.email || '', 
-    password: initialValues.password || '',
+    ...user,
+    email: initialValues.email || user.email, 
+    password: initialValues.password || user.password,
   };
 }
 
