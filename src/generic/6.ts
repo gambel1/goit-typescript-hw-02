@@ -22,9 +22,9 @@ const user = {
 function createOrUpdateUser(initialValues: Partial<User>) {
   const updatedUser: User = {
     ...user,
-    email: initialValues.email || user.email, 
-    password: initialValues.password || user.password,
+    ...initialValues
   };
+  return updatedUser
 }
 
 createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
